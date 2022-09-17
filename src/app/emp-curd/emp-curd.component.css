@@ -1,0 +1,28 @@
+.mat-elevation-z8 {    
+    overflow-x: auto;
+   }
+   table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  th, td {
+    overflow: hidden;
+    width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mat-success {
+    background-color: green;
+    color: #fff;
+}
+.mat-delete
+ {
+    background-color: rgb(231, 38, 38);
+    color: #fff;
+}
+.mat-form-field {
+    display: contents;
+    position: relative;
+    text-align: left;
+}

@@ -1,0 +1,76 @@
+<mat-grid-list cols="2"  >
+  <mat-grid-tile>
+    <div class="mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+    
+      
+    
+     
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="Name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+    
+      <!-- Age Column -->
+      <ng-container matColumnDef="Age">
+        <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.age}} </mat-cell>
+      </ng-container>
+    
+      <!-- Salary Column -->
+      <ng-container matColumnDef="Salary">
+        <mat-header-cell *matHeaderCellDef> Salary </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.salary}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Action">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          <button mat-button class="mat-success"  (click)="onEditClick(element)" >
+    
+            Edit
+          </button>&nbsp;
+          <button mat-button class="mat-delete"  (click)="onDeleteClick(element)">
+    
+            Delete
+          </button>
+        </mat-cell>
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  
+
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <h1>ADD Employee</h1>
+    <hr>
+    <form [formGroup]="myForm" (ngSubmit)="submitForm()" novalidate>
+      <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Age</mat-label>
+      <input matInput placeholder="Age" formControlName="age">
+      
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Salary</mat-label>
+      <input matInput placeholder="Salary" formControlName="salary">
+    </mat-form-field>
+    <div class="button-wrapper">
+      <button mat-flat-button color="primary">Submit</button>
+    </div>
+  </div>
+  </form>
+  </mat-grid-tile>
+ 
+</mat-grid-list>
+
+
